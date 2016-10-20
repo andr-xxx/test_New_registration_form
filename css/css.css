@@ -1,0 +1,35 @@
+
+.lists-of-companies {
+}
+.lists-of-companies h3 {
+    background-color: lightgrey;
+    margin:0;
+    padding:10px 0;
+    border: 1px solid black;
+}
+.scroll-list {
+    max-height:300px;
+    overflow: auto;
+    padding:0;
+    width: 100%;
+}
+.scroll-list button {
+    border: 1px solid black;
+    text-align: left;
+}
+
+
+/*::-webkit-scrollbar {*/
+    /*width: 20px;*/
+    /*background: yellow;*/
+/*}*/
+/*::-webkit-scrollbar-thumb {*/
+    /*border: 2px dotted green;*/
+    /*border-radius: 10px;*/
+/*}*/
+/*::-webkit-scrollbar-thumb:hover {*/
+    /*background: red;*/
+/*}*/
+/*::-webkit-scrollbar-thumb:active {*/
+     /*background: blue;*/
+ /*}*/

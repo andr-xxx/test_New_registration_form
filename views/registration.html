@@ -1,7 +1,7 @@
-<div class="container-fluid">
+<div class="container-fluid" ng-controller="registrationCtrl"z>
   <div class="row">
     <div class="col-md-12">
-      <form ng-submit="data()" name="registerForm">
+      <form ng-submit="register()" name="registerForm">
         <div class="form-group">
           <label for="name">Name</label>
           <input type="text" class="form-control" id="name" placeholder="name" ng-model="user.name" required>
@@ -36,3 +36,5 @@
     </div>
   </div>
 </div>
+
+<!--todo add validation-->

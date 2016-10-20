@@ -1,8 +1,8 @@
 var app = angular.module('codeIt', ['ui.router']);
 
 app.config(function($stateProvider, $urlRouterProvider) {
-   // Любые неопределенные url перенаправлять на /welcome
-   $urlRouterProvider.otherwise("/registr");
+   // Любые неопределенные url перенаправлять на /registr
+   $urlRouterProvider.otherwise("/reg");
    // Теперь определим состояния
    $stateProvider
       .state('registr', {
@@ -19,13 +19,13 @@ app.config(function($stateProvider, $urlRouterProvider) {
 });
 
 // проверка аутентификации
-app.run(['$rootScope', '$state', '$cookies', function($rootScope, $state, $cookies) {
-   $rootScope.$on('$stateChangeStart', function(event, next) {
-      // перенаправить на домашнюю страницу, если пользвоатель не зарегестрирован
-      if (next.authenticate && !$cookies.get('idUser')) {
-         alert ('access is denied');
-         event.preventDefault();
-         $state.go('login');
-      }
-   });
-}]);
+// app.run(['$rootScope', '$state', '$cookies', function($rootScope, $state, $cookies) {
+//    $rootScope.$on('$stateChangeStart', function(event, next) {
+//       // перенаправить на домашнюю страницу, если пользвоатель не зарегестрирован
+//       if (next.authenticate && !$cookies.get('idUser')) {
+//          alert ('access is denied');
+//          event.preventDefault();
+//          $state.go('login');
+//       }
+//    });
+// }]);

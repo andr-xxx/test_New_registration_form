@@ -543,7 +543,7 @@ if (typeof module !== "undefined" && typeof exports !== "undefined" && module.ex
        * routes.
        *
        * @param {object} invocables functions to invoke or
-       * `$injector` services to fetch.
+       * `$injector` directive to fetch.
        * @param {object} locals  values to make available to the injectables
        * @param {object} parent  a promise returned by another call to `$resolve`.
        * @param {object} self  the `this` for the invoked methods
@@ -1496,7 +1496,7 @@ if (typeof module !== "undefined" && typeof exports !== "undefined" && module.ex
        * </pre>
        *
        * This is a more complex example of a type that relies on dependency injection to
-       * interact with services, and uses the parameter name from the URL to infer how to
+       * interact with directive, and uses the parameter name from the URL to infer how to
        * handle encoding and decoding parameter values:
        *
        * <pre>
@@ -1505,8 +1505,8 @@ if (typeof module !== "undefined" && typeof exports !== "undefined" && module.ex
        * // a backend API:
        * $urlMatcherFactoryProvider.type('dbObject', {}, function(Users, Posts) {
    *
-   *   // Matches up services to URL parameter names
-   *   var services = {
+   *   // Matches up directive to URL parameter names
+   *   var directive = {
    *     user: Users,
    *     post: Posts
    *   };
@@ -1519,11 +1519,11 @@ if (typeof module !== "undefined" && typeof exports !== "undefined" && module.ex
    *     decode: function(value, key) {
    *       // Look up the object by ID, using the parameter
    *       // name (key) to call the correct service
-   *       return services[key].findById(value);
+   *       return directive[key].findById(value);
    *     },
    *     is: function(object, key) {
    *       // Check that object is a valid dbObject
-   *       return angular.isObject(object) && object.id && services[key];
+   *       return angular.isObject(object) && object.id && directive[key];
    *     }
    *     equals: function(a, b) {
    *       // Check the equality of decoded objects by comparing
@@ -1811,7 +1811,7 @@ if (typeof module !== "undefined" && typeof exports !== "undefined" && module.ex
        * </pre>
        *
        * @param {function} rule Handler function that takes `$injector` and `$location`
-       * services as arguments. You can use them to return a valid path as a string.
+       * directive as arguments. You can use them to return a valid path as a string.
        *
        * @return {object} `$urlRouterProvider` - `$urlRouterProvider` instance
        */
@@ -1848,7 +1848,7 @@ if (typeof module !== "undefined" && typeof exports !== "undefined" && module.ex
        *
        * @param {string|function} rule The url path you want to redirect to or a function
        * rule that returns the url path. The function version is passed two params:
-       * `$injector` and `$location` services, and must return a url string.
+       * `$injector` and `$location` directive, and must return a url string.
        *
        * @return {object} `$urlRouterProvider` - `$urlRouterProvider` instance
        */

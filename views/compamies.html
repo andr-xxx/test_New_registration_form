@@ -1,4 +1,38 @@
-<div></div>
-<div></div>
-<div></div>
-<div></div>
+<div ng-controller="companiesCtrl">
+  <div class="container-fluid">
+
+    <div class="row">
+      <div class="col-md-6">
+        <div class="total-companies">
+          <h3>Total Companies</h3>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="lists-of-companies" ng-controller="listCompaniesCtrl">
+          <h3>List of companies</h3>
+          <div class="btn-group-vertical  scroll-list">
+            <button type="button" class="btn btn-default" ng-repeat="list in lists" ng-click="openPartners($index)">{{ list.name }}</button>
+          </div>
+          </div>
+      </div>
+    </div>
+  </div>
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-12 company-partners" ng-if="visible.partners"> <!-- этим блоком управляем companiesCtrl контроллером-->
+        <h2>Company partners</h2>
+        <div ng-repeat="partner in partners">{{ partner }}</div>
+      </div>
+    </div>
+  </div>
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-" ng-controller="locationCtrl">
+        <h2>Companies by Location</h2>
+        <div id="company-location-graph" style="width: auto; height: 500px;"></div>
+
+      </div>
+    </div>
+  </div>
+
+</div>
