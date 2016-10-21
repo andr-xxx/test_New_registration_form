@@ -18,14 +18,14 @@ app.config(function($stateProvider, $urlRouterProvider) {
       })
 });
 
-// проверка аутентификации
-// app.run(['$rootScope', '$state', '$cookies', function($rootScope, $state, $cookies) {
+//проверка аутентификации
+// app.run(['$rootScope', '$state', function($rootScope, $state) {
 //    $rootScope.$on('$stateChangeStart', function(event, next) {
 //       // перенаправить на домашнюю страницу, если пользвоатель не зарегестрирован
-//       if (next.authenticate && !$cookies.get('idUser')) {
+//       if (next.authenticate && !$rootScope.acces) {
 //          alert ('access is denied');
 //          event.preventDefault();
-//          $state.go('login');
+//          $state.go('registr');
 //       }
 //    });
 // }]);

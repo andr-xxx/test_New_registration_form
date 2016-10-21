@@ -1,14 +1,26 @@
-app.controller('registrationCtrl', function ($scope, httpRequest, $state) {
+app.controller('registrationCtrl', function ($scope, httpRequest, $state, $rootScope) {
    $scope.user = {};
+   $scope.selected = true;
+   $scope.loginError = {};
+   $rootScope.acces = false;
 
    $scope.register = function () {
       var url = "http://codeit.pro/frontTestTask/user/registration";
       var data = createForm();
       httpRequest(url, data)
          .then(function successCallback(answ) {
-            $state.go('companies');
-         }, function error() {
-            console.log ('error')
+            $scope.loginError = {};
+            console.log (answ.data)
+
+            if (answ.data.message === 'User created') {
+               $rootScope.acces = true;
+               $state.go('companies');
+            } else {
+               $scope.loginError[answ.data.field] = answ.data.message;
+               console.log ($scope.loginError)
+            }
+         }, function error(error) {
+            console.log (error)
             return
             //todo проверка прав доступа и ошибок
 

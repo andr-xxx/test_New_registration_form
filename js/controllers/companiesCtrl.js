@@ -25,4 +25,5 @@ app.controller('companiesCtrl', function ($scope, httpRequest, $rootScope) {
          //todo проверка прав доступа и ошибок
 
       })
+
 });

@@ -1,36 +1,39 @@
-/**
- * Created by Andr on 20.10.2016.
- */
 app.factory('googleGraph', [googleGraph]);
 
 function googleGraph() {
-   return function (arr, id) {
-      console.log (arr)
-      console.log (id)
-      google.charts.load("current", {packages:["corechart"]});
+   var select = {};
+   return select = {
+      create: create,
+      click: click
+   };
+   function create(arr, id, scope) {
+      google.charts.load("current", {packages: ["corechart"]});
+
+
       google.charts.setOnLoadCallback(drawChart);
       function drawChart() {
-         console.log (arr)
          var data = google.visualization.arrayToDataTable(arr);
-         //    [
-         //
-         //    ['Task', 'Hours per Day'],
-         //    ['Work',     11],
-         //    ['Eat',      2],
-         //    ['Commute',  2],
-         //    ['Watch TV', 2],
-         //    ['Sleep',    7]
-         // ]);
 
          var options = {
-            title: '',
-            is3D: true
+            title: ''
+            // is3D: true
          };
 
-         var chart = new google.visualization.PieChart(document.getElementById('company-location-graph'));
+         var chart = new google.visualization.PieChart(document.getElementById(id));
+         google.visualization.events.addListener(chart, 'select', selectHandler);
+
+         function selectHandler() {
+            temp = chart.getSelection()[0];
+            if (temp) {
+               scope.selected = data.getFormattedValue(temp.row, 0)
+            }
+         }
+
          chart.draw(data, options);
       }
    }
+   function click() {
 
+   }
 
 }
