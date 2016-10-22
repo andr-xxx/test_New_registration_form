@@ -12,8 +12,8 @@
         <div class="lists-of-companies" ng-controller="listCompaniesCtrl">
           <h3>List of companies</h3>
           <div class="btn-group-vertical  scroll-list">
-            <button type="button" class="btn btn-default" ng-repeat="list in lists" ng-click="openPartners($index)">{{
-              list.name }}
+            <button type="button" class="btn btn-default" ng-repeat="list in lists" ng-click="openPartners($index)">
+              {{list.name }}
             </button>
           </div>
         </div>
@@ -25,11 +25,13 @@
       <div class="col-md-12 company-partners" ng-show="visible.partners">
         <div ng-controller="partnersCtrl">
           <div class="sort-line">
-            <h2>Company partners</h2><p>Sort by:<span ng-click="changeSortByValue()"> Percentage ⇅</span>
-            <span ng-click="changeSortByName()"> Name ⇅ </span><span ng-click="close()" class="close-button"> X </span></p>
+            <h2>Company partners</h2>
+            <p>Sort by:<span ng-click="changeSortByValue()"> Percentage ⇅</span>
+              <span ng-click="changeSortByName()"> Name ⇅ </span><span ng-click="close()"
+                                                                       class="close-button"> X </span></p>
           </div>
-          <div ng-repeat="partner in partners | orderBy: sortParthners" class="partners-list">{{ partner.name }} {{
-            partner.value }}%
+          <div ng-repeat="partner in partners | orderBy: sortParthners" class="partners-list">{{ partner.name }}
+            {{partner.value }}%
           </div>
         </div>
       </div>
@@ -39,13 +41,21 @@
     <div class="row">
       <div class="col-md-8" ng-controller="locationCtrl">
         <h2>Companies by Location</h2>
-        <div id="company-location-graph" style="width: auto; height: 500px;" ng-click="test()"></div>
+        <div id="company-location-graph" style="width: auto; height: 500px; min-width: 360px" ng-click="test()"></div>
         hello{{ selected }} hello
 
       </div>
       <div class="col-md-4">
         <div class="news" ng-controller="newsCtrl">
           <h3>News</h3>
+          <div ng-repeat="theme in news" ng-show="$index == 1" class="news">
+            <p> Date {{ theme.date }}</p>
+            <p> Theme {{ theme.description }}</p>
+            <img src='{{ theme.img }}' alt="img">
+            <h4> Autor {{ theme.author }}</h4>
+            <a href='{{ theme.link }}'>{{ theme.link }}</a>
+            <p>___________________________________________________________________________________</p>
+          </div>
         </div>
       </div>
     </div>
