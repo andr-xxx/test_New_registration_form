@@ -1,17 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="c13bf0fe-be75-4783-b54f-f34c6f91a65d" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/css.css" afterPath="$PROJECT_DIR$/css/css.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.html" afterPath="$PROJECT_DIR$/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/app.js" afterPath="$PROJECT_DIR$/js/app.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/controllers/companiesCtrl.js" afterPath="$PROJECT_DIR$/js/controllers/companiesCtrl.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/controllers/newsCtrl.js" afterPath="$PROJECT_DIR$/js/controllers/newsCtrl.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/controllers/registrationCtrl.js" afterPath="$PROJECT_DIR$/js/controllers/registrationCtrl.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/compamies.html" afterPath="$PROJECT_DIR$/views/compamies.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/registration.html" afterPath="$PROJECT_DIR$/views/registration.html" />
-    </list>
+    <list default="true" id="c13bf0fe-be75-4783-b54f-f34c6f91a65d" name="Default" comment="" />
     <ignored path="test_CodeIT.iws" />
     <ignored path=".idea/workspace.xml" />
     <ignored path="$PROJECT_DIR$/.tmp/" />
@@ -101,11 +91,11 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="app.js" pinned="false" current-in-tab="true">
+          <file leaf-file-name="app.js" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/js/app.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="651">
-                  <caret line="21" column="0" selection-start-line="21" selection-start-column="0" selection-end-line="31" selection-end-column="0" />
+                <state relative-caret-position="837">
+                  <caret line="27" column="30" selection-start-line="27" selection-start-column="30" selection-end-line="27" selection-end-column="30" />
                   <folding />
                 </state>
               </provider>
@@ -151,7 +141,7 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="newsCtrl.js" pinned="false" current-in-tab="false">
+          <file leaf-file-name="newsCtrl.js" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/js/controllers/newsCtrl.js">
               <provider selected="true" editor-type-id="text-editor">
                 <state relative-caret-position="124">
@@ -625,12 +615,12 @@
       <workItem from="1476704157243" duration="16090000" />
       <workItem from="1476805617847" duration="90493000" />
       <workItem from="1477208547791" duration="12496000" />
-      <workItem from="1477233708707" duration="8597000" />
+      <workItem from="1477233708707" duration="9042000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="127676000" />
+    <option name="totallyTimeSpent" value="128121000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -980,14 +970,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js/controllers/newsCtrl.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="124">
-          <caret line="4" column="0" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/js/controllers/partnersCtrl.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="434">
@@ -1054,18 +1036,26 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js/app.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="651">
-          <caret line="21" column="0" selection-start-line="21" selection-start-column="0" selection-end-line="31" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/index.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="403">
           <caret line="13" column="0" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/app.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="837">
+          <caret line="27" column="30" selection-start-line="27" selection-start-column="30" selection-end-line="27" selection-end-column="30" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/controllers/newsCtrl.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="124">
+          <caret line="4" column="0" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
           <folding />
         </state>
       </provider>
