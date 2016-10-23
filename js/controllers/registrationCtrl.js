@@ -16,11 +16,12 @@ app.controller('registrationCtrl', function ($scope, httpRequest, $state, $rootS
                $rootScope.acces = true;
                $state.go('companies');
             } else {
-               $scope.loginError[answ.data.field] = answ.data.message;
+               $scope.loginError.statusErr = answ.data.message;
                console.log ($scope.loginError)
             }
          }, function error(error) {
-            console.log (error)
+            console.log (error);
+            alert ('404')
          })
 
 

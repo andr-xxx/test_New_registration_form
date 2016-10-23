@@ -2,7 +2,6 @@ app.controller('newsCtrl', function ($scope, httpRequest, $interval) {
    var url = 'http://codeit.pro/frontTestTask/news/getList';
    httpRequest(url)
       .then(function succesCallback(answ) {
-         console.log(answ);
          $scope.visible.loaderNews = true;
          $scope.newsData = answ.data.list;
          for (var i = 0; i < $scope.newsData.length; i++) {

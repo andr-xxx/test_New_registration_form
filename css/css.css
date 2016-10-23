@@ -53,6 +53,43 @@
     margin: 0;
     padding: 10px 10px
 }
+.partners-name{
+    transform: rotate(-90deg);
+    width: 73px;
+    height: 200px;
+    font-size:24px;
+    border:2px solid black;
+}
+.parnters-percent {
+    margin: 0;
+    font-size: 24px;
+    text-align: center;
+}
+table {
+    margin: 10px;
+}
+.text-in-table {
+    position: absolute;
+    top: 80px;
+    left: -40px;
+}
+.table-bor {
+    width: 70px;
+    height: 70px;
+    border:2px solid black;
+    margin: auto;
+    padding-top: 3px;
+    border-radius: 35px;
+    font-size:36px;
+    line-height:60px;
+}
+.help-div {
+    width: 20px;
+    height: 40px;
+    border: 2px solid black;
+    border-top: none;
+    margin:auto;
+}
 
 .close-button:hover {
     cursor: pointer;
@@ -150,7 +187,10 @@
 
 .button-back {
     font-size: 40px;
+    float: right;
+    margin-right:10px;
 }
+
 .button-back:hover {
     cursor: pointer;
 }
@@ -184,24 +224,22 @@
     left: -30px;
     font-size:30px;
     cursor: pointer;
-    opacity: 0.5;
 }
 
 .right{
     right: -30px;
     font-size:30px;
     cursor: pointer;
-    opacity: 0.5;
 }
 
 #slider:hover .left{
     left: 20px;
-    opacity: 1;
+    opacity: 0.3;
 }
 
 #slider:hover .right{
     right: 20px;
-    opacity: 1;
+    opacity: 0.3;
 }
 
 #floater {
@@ -209,5 +247,7 @@
     height: 50%;
     width: 100%;
     margin-bottom: 72px;
-
+}
+.news-content {
+    padding:10px;
 }

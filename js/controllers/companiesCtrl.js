@@ -4,7 +4,7 @@
 app.controller('companiesCtrl', function ($scope, httpRequest, $rootScope) {
 
    $scope.visible = {
-      loader: false,
+      loader: true,
       loaderNews: false,
       partners: false,
       countries: true
@@ -18,9 +18,8 @@ app.controller('companiesCtrl', function ($scope, httpRequest, $rootScope) {
    var url = "http://codeit.pro/frontTestTask/company/getList";
    httpRequest(url)
       .then(function successCallback(answ) {
-         // console.log (answ.data.list)
          $scope.lists = answ.data.list;
-         $scope.visible.loader = true;
+         $scope.visible.loader = false;
          $rootScope.$broadcast('dataLoaded')
       }, function error() {
          console.log('error');

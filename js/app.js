@@ -19,13 +19,13 @@ app.config(function($stateProvider, $urlRouterProvider) {
 });
 
 //проверка аутентификации
-// app.run(['$rootScope', '$state', function($rootScope, $state) {
-//    $rootScope.$on('$stateChangeStart', function(event, next) {
-//       // перенаправить на домашнюю страницу, если пользвоатель не зарегестрирован
-//       if (next.authenticate && !$rootScope.acces) {
-//          alert ('access is denied');
-//          event.preventDefault();
-//          $state.go('registr');
-//       }
-//    });
-// }]);
+app.run(['$rootScope', '$state', function($rootScope, $state) {
+   $rootScope.$on('$stateChangeStart', function(event, next) {
+      // перенаправить на домашнюю страницу, если пользвоатель не зарегестрирован
+      if (next.authenticate && !$rootScope.acces) {
+         alert ('access is denied');
+         event.preventDefault();
+         $state.go('registr');
+      }
+   });
+}]);
