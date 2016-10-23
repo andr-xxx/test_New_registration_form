@@ -18,8 +18,23 @@ app.controller('locationCtrl', function ($scope, googleGraph) {
       }
       googleGraph.create($scope.stats, 'company-location-graph', $scope);    // рисуем график. аргументы функции массив массивов данных и айдишник
    });
-   $scope.test = function () {
-      console.log ($scope.selected)
+   $scope.selected = '';
+   $scope.getList = function () {
 
+      console.log ($scope.selected);
+      if ($scope.selected) {
+         $scope.visible.countries = false;
+      }
+      $scope.companiesByCountry = [];
+      for (var i = 0; i < $scope.lists.length; i++) {
+         if ($scope.lists[i].location.name == $scope.selected) {
+            $scope.companiesByCountry.push($scope.lists[i])
+         }
+      }
+      return $scope.companiesByCountry;
+   };
+
+   $scope.back = function () {
+      $scope.visible.countries = true;
    }
 });

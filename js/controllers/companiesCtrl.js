@@ -4,8 +4,10 @@
 app.controller('companiesCtrl', function ($scope, httpRequest, $rootScope) {
 
    $scope.visible = {
-      loader: true,
-      partners: false
+      loader: false,
+      loaderNews: false,
+      partners: false,
+      countries: true
    };
    $scope.statsPartners = function () {
       for (var i = 0; i < $scope.lists.length; i++) {
@@ -17,7 +19,8 @@ app.controller('companiesCtrl', function ($scope, httpRequest, $rootScope) {
    httpRequest(url)
       .then(function successCallback(answ) {
          // console.log (answ.data.list)
-         $scope.lists = answ.data.list
+         $scope.lists = answ.data.list;
+         $scope.visible.loader = true;
          $rootScope.$broadcast('dataLoaded')
       }, function error() {
          console.log('error');

@@ -21,9 +21,6 @@ app.controller('registrationCtrl', function ($scope, httpRequest, $state, $rootS
             }
          }, function error(error) {
             console.log (error)
-            return
-            //todo проверка прав доступа и ошибок
-
          })
 
 

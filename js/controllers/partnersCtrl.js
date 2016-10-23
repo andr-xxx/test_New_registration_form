@@ -4,15 +4,15 @@ app.controller  ('partnersCtrl', function ($scope) {
    });
    $scope.close = function () {
       $scope.visible.partners = false
-   }
-   $scope.sortParthners = 'value';
+   };
+   $scope.sortParthners = '-value';
    $scope.changeSortByValue = function () {
-      if ($scope.sortParthners === 'value') {
-         $scope.sortParthners = '-value'
-      } else {
+      if ($scope.sortParthners === '-value') {
          $scope.sortParthners = 'value'
+      } else {
+         $scope.sortParthners = '-value'
       }
-   }
+   };
    $scope.changeSortByName = function () {
       if ($scope.sortParthners === 'name') {
          $scope.sortParthners = '-name'

@@ -26,7 +26,7 @@ function googleGraph() {
             temp = chart.getSelection()[0];
             if (temp) {
                scope.$apply(function () {
-                  scope.selected = data.getFormattedValue(temp.row, 0)
+                  scope.selected = data.getFormattedValue(temp.row, 0);
                })
             }
          }
