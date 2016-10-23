@@ -1,91 +1,94 @@
 <div ng-controller="companiesCtrl">
-  <div class="container-fluid">
+    <div class="container-fluid">
 
-    <div class="row">
-      <div class="col-md-6">
-        <div class="total-companies">
-          <h3>Total Companies</h3>
-          <div ng-if="!visible.loader" class="loader"><img src="./img/loading.gif" alt="$"></div>
-          <div class="sum-of-companies">
-            <div id="floater"></div>
-            <div class="circle">
-              {{ lists.length }}
+        <div class="row">
+            <div class="col-md-6">
+                <div class="total-companies">
+                    <h3>Total Companies</h3>
+                    <div ng-if="!visible.loader" class="loader"><img src="./img/loading.gif" alt="$"></div>
+                    <div class="sum-of-companies">
+                        <div id="floater"></div>
+                        <div class="circle">
+                            {{ lists.length }}
+                        </div>
+                    </div>
+                </div>
             </div>
-          </div>
+            <div class="col-md-6">
+                <div class="lists-of-companies" ng-controller="listCompaniesCtrl">
+                    <h3>List of companies</h3>
+                    <div ng-if="!visible.loader" class="loader"><img src="./img/loading.gif" alt="$"></div>
+                    <div class="btn-group-vertical  scroll-list" ng-if="visible.loader">
+                        <button type="button" class="btn btn-default" ng-repeat="list in lists"
+                                ng-click="openPartners($index)">
+                            {{list.name }}
+                        </button>
+                    </div>
+                </div>
+            </div>
         </div>
-      </div>
-      <div class="col-md-6">
-        <div class="lists-of-companies" ng-controller="listCompaniesCtrl">
-          <h3>List of companies</h3>
-          <div ng-if="!visible.loader" class="loader"><img src="./img/loading.gif" alt="$"></div>
-          <div class="btn-group-vertical  scroll-list" ng-if="visible.loader">
-            <button type="button" class="btn btn-default" ng-repeat="list in lists" ng-click="openPartners($index)">
-              {{list.name }}
-            </button>
-          </div>
-        </div>
-      </div>
     </div>
-  </div>
-  <div class="container-fluid">
-    <div class="row">
-      <div class="col-md-12" ng-show="visible.partners">
-        <div class="company-partners">
-          <div ng-controller="partnersCtrl">
-            <div class="sort-line">
-              <h3>Company partners</h3>
-              <p>Sort by:<span ng-click="changeSortByValue()"> Percentage ⇅</span>
-                <span ng-click="changeSortByName()"> Name ⇅ </span><span ng-click="close()"
-                                                                         class="close-button"> X </span></p>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12" ng-show="visible.partners">
+                <div class="company-partners">
+                    <div ng-controller="partnersCtrl">
+                        <div class="sort-line">
+                            <h3>Company partners</h3>
+                            <p>Sort by:<span ng-click="changeSortByValue()"> Percentage ⇅</span>
+                                <span ng-click="changeSortByName()"> Name ⇅ </span><span ng-click="close()"
+                                                                                         class="close-button"> X </span>
+                            </p>
+                        </div>
+                        <div ng-repeat="partner in partners | orderBy: sortParthners" class="partners-list">{{
+                            partner.name }}
+                            {{partner.value }}%
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div ng-repeat="partner in partners | orderBy: sortParthners" class="partners-list">{{ partner.name }}
-              {{partner.value }}%
-            </div>
-          </div>
         </div>
-      </div>
     </div>
-  </div>
-  <div class="container-fluid">
-    <div class="row">
-      <div class="col-md-6" ng-controller="locationCtrl">
-        <div class="location">
-          <div>
-            <h3>Companies by Location</h3>
-            <p><span class="button-back" ng-click="back()" ng-show="!visible.countries">&#9754</span></p>
-          </div>
-          <div ng-if="!visible.loader" class="loader"><img src="./img/loading.gif" alt="$"></div>
-          <div ng-if="visible.loader" ng-show="visible.countries" id="company-location-graph"
-               style="width: auto; height: 500px; min-width: 360px"
-               ng-click="getList()"></div>
-          <div class="btn-group-vertical button-country" ng-show="!visible.countries">
-            <h4>{{ selected }}</h4>
-            <button type="button" class="btn btn-default" ng-repeat="country in companiesByCountry">
-              {{ country.name}}
-            </button>
-          </div>
-        </div>
-      </div>
-      <div class="col-md-6">
-        <div class="news" ng-controller="newsCtrl" id="slider">
-          <div class="arrow left" ng-click="newSlide(false)">◀</div>
-          <div class="arrow right" ng-click="newSlide(true)">▶</div>
-          <div class="news-content">
-            <h3>News</h3>
-            <div ng-if="!visible.loaderNews" class="loader"><img src="./img/loading.gif" alt="$"></div>
-            <div ng-if="visible.loaderNews" ng-repeat="theme in newsData" ng-show="$index == count">
-              <h4> Autor {{ theme.author }}</h4>
-              <!--в условии было ещё что-то сказано про заголовок, но я его не нашёл в ответе с сервера-->
-              <p> Date {{ theme.date }}</p>
-              <div>{{ theme.description | limitTo: 150}}<span ng-show="theme.description.length > 50">...</span></div>
-              <div><img src='{{ theme.img }}' alt="img"></div>
-              <!--картинки будут скакать в пределах 300px-->
-              <a href='{{ theme.link }}'>{{ theme.link }}</a>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-6" ng-controller="locationCtrl">
+                <div class="location">
+                    <div>
+                        <h3>Companies by Location</h3>
+                        <p><span class="button-back" ng-click="back()" ng-show="!visible.countries">&#9754</span></p>
+                    </div>
+                    <div ng-if="!visible.loader" class="loader"><img src="./img/loading.gif" alt="$"></div>
+                    <div ng-if="visible.loader" ng-show="visible.countries" id="company-location-graph"
+                         style="width: auto; height: 500px; min-width: 360px"></div>
+                    <div class="btn-group-vertical button-country" ng-show="!visible.countries">
+                        <h4>{{ selected }}</h4>
+                        <button type="button" class="btn btn-default" ng-repeat="country in companiesByCountry">
+                            {{ country.name}}
+                        </button>
+                    </div>
+                </div>
             </div>
-          </div>
+            <div class="col-md-6">
+                <div class="news" ng-controller="newsCtrl" id="slider">
+                    <div class="arrow left" ng-click="newSlide(false)">◀</div>
+                    <div class="arrow right" ng-click="newSlide(true)">▶</div>
+                    <div class="news-content">
+                        <h3>News</h3>
+                        <div ng-if="!visible.loaderNews" class="loader"><img src="./img/loading.gif" alt="$"></div>
+                        <div ng-if="visible.loaderNews" ng-repeat="theme in newsData" ng-show="$index == count">
+                            <h4> Autor {{ theme.author }}</h4>
+                            <!--в условии было ещё что-то сказано про заголовок, но я его не нашёл в ответе с сервера-->
+                            <p> Date {{ theme.date }}</p>
+                            <div>{{ theme.description | limitTo: 150}}<span
+                                    ng-show="theme.description.length > 50">...</span></div>
+                            <div><img src='{{ theme.img }}' alt="img"></div>
+                            <!--картинки будут скакать в пределах 300px-->
+                            <a href='{{ theme.link }}'>{{ theme.link }}</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-      </div>
     </div>
-  </div>
 
 </div>
